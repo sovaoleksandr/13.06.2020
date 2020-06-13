@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
+:root{
+	--maincolor: orange;
+}
+
 *{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
 
+a{
+	text-decoration: none;
+	color: white;
+}
+
 .container{
-	width: 80%;
+	width: 100%;
+	max-width: 1300px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	color: white;
 	font-family: 'Comfortaa', cursive;
 }
 
@@ -22,7 +33,6 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	color: white;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -31,18 +41,19 @@
 }
 
 .header_blue{
-	position: absolute;
+	position: relative;
 	left: 0;
 	top: 0;
 	background: lightblue;
-	/*opacity: 0;*/
+	/*opacity: 0.7;*/
 	width: 100%;
 	height: 100%;
 	z-index: 1;
 }
 
-.header div{
+.header > .h1{
 	display: flex;
+	z-index: 2;
 	width: 75%;
 	flex-direction: column;
 	align-items: flex-start;
@@ -57,7 +68,7 @@
 
 .header span{
 	font-size: 2em;
-	background: orange;
+	background: var(--maincolor);
 	padding: 1em;
 	text-transform: uppercase;
 }
@@ -67,7 +78,6 @@
 	height: 750px;
 	display: flex;
 	align-items: center;
-	color: white;
 	margin-bottom: 1em;
 }
 
@@ -79,24 +89,26 @@
 }
 
 .about_text div{
-	background: orange;
+	background: var(--maincolor);
 	padding: 3em;
-	width: 200%;
+	width: 250%;
 	z-index: 2;
 	transform: translateX(10%);
 }
 
 .about_text div h1{
 	text-transform: uppercase;
-	padding: .5em;
+	padding: 0 .5em .5em 0;
+	text-align: left;
 	font-size: 2.5em;
-	border-bottom: 3px white solid;
+	margin-bottom: 0.2em;
+	border-bottom: 5px white solid;
 }
 
 .about_text div p{
 	padding-top: 0.5em;
-	font-size: 2em;
-	line-height: 1em;
+	font-size: 1.5em;
+	line-height: 1.2em;
 }
 
 .about .img{
@@ -109,8 +121,7 @@
 }
 
 .services{
-	width: 100%;	
-	height: 700px;
+	width: 100%;
 	display: flex;
 	padding: 1em;
 	align-items: center;
@@ -128,7 +139,7 @@
 .services .left h1{
 	text-transform: uppercase;
 	font-size: 3em;
-	color: orange;
+	color: var(--maincolor);
 	padding: 1em;
 	border-bottom: 10px lightblue solid;
 }
@@ -151,20 +162,96 @@
 
 .right .kind .text{
 	width: 70%;
+	display: flex;
+	color: black;
+	font-size: 1.2em;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .kind .text p{
 	font-style: bolder;
-	color: orange;
-	font-size: 1.2em;
+	color: var(--maincolor);
+	font-size: 1.1em;
 }
 
 .right .kind .icon{
-	width: 20%;
+	padding: 1em;
 }
 
 .kind .icon img{
+	width: 90px;
+}
+
+.team{
+	width: 100%;
+	padding: 5em;
+	display: grid;
+	grid-template: 1fr 1fr 1fr / 1fr 1fr; 
+	color: white;
+	background: var(--maincolor);
+	margin: 1em 0 3em 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.team_h1{
+	display: flex;
+	align-self: center;
+	justify-content: center;
+}
+
+.team_h1 h1{
+	padding-bottom: 0.7em;
+	font-size: 3em;
+	border-bottom: 5px lightblue solid;
+}
+
+.peoples{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1.5em 0; 
+}
+
+.people{
+	width: 100%;
+	padding: 2em 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.people_img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 1em;
+}
+
+.people_img img{
 	width: 100px;
+	opacity: 0.8;
+}
+
+.people_info{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.people_info p{
+	font-size: 1.2em;
+}
+
+.people_info .h1{
+	font-size: 1.4em;
+	transition: 0.5s;
+	text-decoration: underline;
+}
+
+.people_info .h1:hover{
+	text-decoration: none;
 }
 
 .footer{
@@ -172,19 +259,89 @@
 	height: 700px;
 	display: flex;
 	align-items: center;
-}
-
-.footer .left{
-	width: 80%;
-	height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-image: url(../img/footer.jpeg);
 }
 
-.footer .right{
-	width: 20%;
+.footer .left{
+	width: 90%;
 	height: 100%;
-	background: orange;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.footer .right{
+	width: 10%;
+	height: 100%;
+	background: lightblue;
+	padding: 2em;
+	width: 30%;
+}
+
+.contact{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 55%;
+	padding: 2em;
+	background: var(--maincolor);
+	transform: translateX(30%);
+	z-index: 2;
+}
+
+.contact h1{
+	font-size: 3em;
+	text-align: right;
+	width: 95%;
+	padding-bottom: 0.5em;
+	border-bottom: 5px white solid;
+	margin-bottom: 0.5em;
+}
+
+.contact p{
+	width: 95%;
+	text-align: right;
+	font-size: 1.2em;
+	padding-bottom: 1em;
+}
+
+.contact .bold{
+	font-style: bolder;
+	font-size: 1.4em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+@media screen and (max-width: 700px){
+	.header h1{
+		font-size: 3.5em;
+	}
+
+	.header span{
+		font-size: 2.5em;
+	}	
+
+	.services{
+		flex-direction: column;
+	}
+
+	.services .left, .services .right{
+		width: 100%;
+	}
+
+	.header .h1{
+		width: 85%;
+	}
+
+	.about_text div{
+		width: 80vw;
+	}
+
+	.contact{
+		width: 100%;
+		transform: translateX(20%);
+	}
 }
