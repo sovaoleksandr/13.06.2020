@@ -187,12 +187,13 @@ a{
 	width: 100%;
 	padding: 5em;
 	display: grid;
-	grid-template: 1fr 1fr 1fr / 1fr 1fr; 
+	grid-template: repeat(6, 1fr)  / 1fr 1fr; 
 	color: white;
 	background: var(--maincolor);
 	margin: 1em 0 3em 0;
 	align-items: center;
 	justify-content: center;
+	grid-column-gap: 10%;
 }
 
 .team_h1{
@@ -207,19 +208,12 @@ a{
 	border-bottom: 5px lightblue solid;
 }
 
-.peoples{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 1.5em 0; 
-}
-
 .people{
-	width: 100%;
+	margin: 1em;
 	padding: 2em 0;
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 .people_img{
@@ -328,6 +322,10 @@ a{
 		flex-direction: column;
 	}
 
+	.team{
+		grid-column-gap: 0;
+	}
+
 	.services .left, .services .right{
 		width: 100%;
 	}
@@ -343,5 +341,16 @@ a{
 	.contact{
 		width: 100%;
 		transform: translateX(20%);
+	}
+}
+
+
+@media screen and (max-width: 600px){
+	.team{
+		grid-template: repeat(12, 1fr) / 1fr;
+	}
+
+	.people{
+		margin: 0;
 	}
 }
