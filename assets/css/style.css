@@ -943,6 +943,13 @@ figure.effect-bubba:hover p {
 .imageinside{
 	margin: 0 auto;
 }
+.imageinside h2{
+	margin-bottom: 0.5em;
+}
+
+.imageinside div{
+	margin-bottom: 1.5em;
+}
 .pos_center{
 	display: flex;
 	justify-content: center;
