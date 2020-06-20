@@ -969,3 +969,9 @@ figure.effect-bubba:hover p {
 	display:flex;
 	flex-direction:column;
 }
+
+@media all and (max-width: 550px){
+	body section:nth-child(3){
+		padding-top: 0;
+	}
+}
